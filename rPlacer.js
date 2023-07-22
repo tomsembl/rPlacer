@@ -1,3 +1,4 @@
+colour = 2 //eg. 1=red, 2=orange, 3=yellow
 function place() {
     try {
         containerParent = document.querySelector("body > garlic-bread-app > faceplate-alert-reporter > garlic-bread-embed")
@@ -9,8 +10,7 @@ function place() {
         placeButton.click()
 
         colourPickerMenu = container.querySelector("garlic-bread-color-picker").shadowRoot
-        orangeButton = colourPickerMenu.querySelector("div > div > div.palette > div:nth-child(2) > button")
-        //to change the colour, change the number in "div:nth-child(2)" eg. 1=red, 2=orange, 3=yellow
+        orangeButton = colourPickerMenu.querySelector(`div > div > div.palette > div:nth-child(${colour}) > button`)
         orangeButton.click()
 
         confirmButton = colourPickerMenu.querySelector("div > div > div.actions > button.confirm.disable-default-select")
